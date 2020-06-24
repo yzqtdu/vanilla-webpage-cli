@@ -4,7 +4,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack')
 
 module.exports = env => {
-  const isTS =  require('typescript')
+  let isTS
+  try {
+    isTS = require('typescript')
+  } catch(err) {
+    isTS = false
+  }
   const babelOptions = isTS ? {
     presets: ['@babel/preset-env', '@babel/preset-typescript'],
     plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-transform-typescript']
