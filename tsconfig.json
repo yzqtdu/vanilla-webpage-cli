@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        // "rootDir": "",
+        // "sourceMap": true,
+        "moduleResolution": "node",
+        "target": "es5" ,
+        "esModuleInterop":true
+    },
+    "include": [
+      "src",
+    ]
+  }
+  
