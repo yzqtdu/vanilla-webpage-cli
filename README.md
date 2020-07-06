@@ -1,3 +1,7 @@
+## 如何使用/How to use
+
+  `npx vanilla-webpage-cli <project-name>`
+
 ## 是什么/WHAT
 
   这是一个用来进行原生web开发的脚手架，执行创建项目的命令之后它将自动为你安装web开发的一些必备工具。
