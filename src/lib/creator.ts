@@ -9,7 +9,7 @@ import fs from 'fs'
 async function create(context: string) {
     const pkg = pkgManager()
     if (!pkg) {
-        console.log(chalk.redBright("请先安装npm包管理器，暂只支持npm安装"))
+        console.log(chalk.redBright("请先安装npm包管理器，暂只支持npm安装(please install npm)"))
         return
     }
     const commands = pkgCommands[pkg]
@@ -38,27 +38,29 @@ async function create(context: string) {
     loadModules(defaultPreset.deps, pack.dependencies)
     loadModules(defaultPreset.scripts, pack.scripts)
     // 安装依赖
-    console.log(chalk.blue("📦正在安装依赖....."))
+    console.log(chalk.blue("📦正在安装依赖(installing dependency)....."))
     fs.writeFileSync(path.join(context, 'package.json'), JSON.stringify(pack))
     const moduleInstall = runCommandAsync(commands['install']['command'], commands['install']['args'], {
         cwd: context,
         stdio: 'inherit'
     }).then(res => 
-        {console.log(chalk.yellowBright("依赖安装完成"))},
-        err => {console.log(chalk.redBright("依赖安装失败"))}
+        {console.log(chalk.yellowBright("依赖安装完成(dependency installed successfully)"))},
+        err => {console.log(chalk.redBright("依赖安装失败(fail to install dependency)"))}
       )
-    console.log(chalk.blue("📦正在安装模板....."))
+    console.log(chalk.blue("📦正在安装模板(installing template)....."))
     const templateInstall = writeTemplates(getTemplates(needTs), context)
         .then(res => 
-                {console.log(chalk.yellowBright("模板安装完成"))},
+                {console.log(chalk.yellowBright("模板安装完成(template installed successfully)"))},
             err => 
-                {console.log(chalk.redBright("模板安装失败"))}
+                {console.log(chalk.redBright("模板安装失败(fail to install template)"))}
         )
     await Promise.all([moduleInstall, templateInstall])
         .then(res => {
-            console.log(chalk.yellowBright("🎉项目创建完成"))
+            console.log(chalk.yellowBright("🎉项目创建完成(project is created successfully)\n"))
+            console.log(chalk.yellowBright("运行 npm serve 开发项目(run npm serve to develop)\n"))
+            console.log(chalk.yellowBright("运行 npm build 构建项目(run npm build to build)\n"))
         }).catch(err => {
-            console.log(chalk.redBright("项目创建失败"))
+            console.log(chalk.redBright("项目创建失败(fail to create project)"))
         })
     process.exit(1)
 }
