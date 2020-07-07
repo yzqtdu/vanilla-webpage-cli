@@ -1,6 +1,6 @@
 ## 如何使用/How to use
 
-  `npx vanilla-webpage-cli <project-name>`
+  `npx vanilla-webpage-cli create <project-name>`
 
   开发: `npm run serve`
   构建：`npm run build`
