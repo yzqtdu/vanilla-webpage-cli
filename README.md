@@ -2,6 +2,8 @@
 
 > easy-to-use cli tool for web development
 
+[![download status](https://img.shields.io/npm/dt/vanilla-webpage-cli)](https://www.npmjs.com/package/vanilla-webpage-cli)
+
 ---
 
 ## Table of Contents(内容) 
