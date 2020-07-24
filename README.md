@@ -7,7 +7,7 @@
 ## Table of Contents(内容) 
 
 - [Installation](#installation)
-- [Features](#feature)
+- [Features](#features)
 - [License](#license)
 
 ---
