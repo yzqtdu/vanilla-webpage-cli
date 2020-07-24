@@ -1,23 +1,70 @@
-## 如何使用/How to use
+# vanilla-webpage-cli
 
-  `npx vanilla-webpage-cli create <project-name>`
+> easy-to-use cli tool for web development
 
-  开发: `npm run serve`
-  构建：`npm run build`
+---
 
-## 是什么/WHAT
+## Table of Contents(内容) 
 
-  这是一个用来进行原生web开发的脚手架，执行创建项目的命令之后它将自动为你安装web开发的一些必备工具。
+- [Installation](#installation)
+- [Features](#feature)
+- [License](#license)
 
-## 使用场景
+---
 
-  不依赖现在流行的Vue、React等框架，适合进行简单web页面开发同时又想利用现代主流前端工具之便的场景。
-  日常工作经常会碰到一些小型活动页的需求，这些需求没必要上vue或react，但是缺少vue-cli或create-react-app提供的便利工具，每次安装库文件都很麻烦，这时你就可以试试它了。觉得有帮助欢迎给个star，谢谢
+## Installation
 
-## 提供了哪些工具？
+> run the following command to create a new project    
 
-  可选择的TypeScript，webpack/babel/eslint，以及相应的配置文件。
+```shell
+$ npx vanilla-webpage-cli create <project-name>
+```
+please set a name which has not been used in your current directory.
 
-## 联系/CONTACT
+### Development
 
-  yzqtdu@gmail.com
+```shell
+$ npm run serve
+```
+or
+
+```shell
+$ npm run build
+```
+---
+
+## Features
+
+### project structure
+
+> you may import net sevice from the `reques.js` file directly
+
+```
+|———— node_modules
+|———— src
+|    |———— index.html
+|    |———— main.js  (entry point)
+|    |———— request.js
+|———— package.json
+|———— package-lock.json
+|———— webpack.config.js
+|———— tsconfig.json (when using typescript)
+```
+
+With previously installed templates, it's convinient to start development and build for production.
+
+### out-of-box tools
+
+- Optional TypeScript (highly recommended)
+- Webpack and useful loaders/plugins (no worry about choosing thoes confusing loaders/plugins ever since)
+- Babel (always ❤ with mordern JavaScript)
+- Axios (easy to send request)
+- Eslint 
+  
+The Webpack will use `main.js` as the entry point, also you can change it inside the config file, and with the help of Webpack plugins there's no need to import it in `index.html` using `script` tag.
+
+---
+
+## License
+
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)

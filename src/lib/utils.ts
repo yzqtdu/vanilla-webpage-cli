@@ -4,12 +4,6 @@ import {copyFile, writeFile, existsSync, mkdirSync} from 'fs'
 import util from 'util'
 import path from 'path'
 
-// 使用不同的配置导致不同的
-// 未配置的话 会将报错信息打印到控制台 应该是系统返回的gkb
-// 配置的话 pipe -> 本进程 不打印 
-// inherit -> 父进程 打印 
-// webpack 并非来自进程 process.env中的值，process统一变成了{env:{}} 对象
-// 被插件定义的直接全局替换了 而且并未出现在 process.env中
 function pkgManager(): string {
     let r
     try {   
