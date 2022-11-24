@@ -53,7 +53,7 @@ $ npm run build
 |———— tsconfig.json (when using typescript)
 ```
 
-With previously installed templates, it's convinient to start development and build for production.
+With pre-installed templates, it's convinient to start development and build for production.
 
 ### out-of-box tools
 
